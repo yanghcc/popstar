@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- <script type="text/javascript" src="script/lib/pixi.js"></script> -->
+  <script src="https://pixijs.download/v5.0.0-rc.3/pixi.js"></script>
+  <script>
+    var root = document.getElementById('root')
+    const app = new PIXI.Application();
+    app.width = '100%'
+
+    // The application will create a canvas element for you that you
+    // can then insert into the DOM
+    document.body.appendChild(app.view);
+    // root.appendChild(app.view);
+
+    // load the texture we need
+    PIXI.Loader.shared.add('bunny', 'logo.png').load((loader, resources) => {
+      // This creates a texture from a 'bunny.png' image
+      const bunny = new PIXI.Sprite(resources.bunny.texture);
+
+      // Setup the position of the bunny
+      bunny.x = app.renderer.width / 2;
+      bunny.y = app.renderer.height / 2;
+
+      // Rotate around the center
+      bunny.anchor.x = 0.5;
+      bunny.anchor.y = 0.5;
+
+      // Add the bunny to the scene we are building
+      app.stage.addChild(bunny);
+
+      // Listen for frame updates
+      app.ticker.add(() => {
+        // each frame we spin the bunny around a bit
+        bunny.rotation += 0.01;
+      });
+    });
+  </script>
+</body>
+
+</html>
