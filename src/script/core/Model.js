@@ -3,8 +3,8 @@
 	@ 模式
 */
 
-import shuffle from '../lib/shuffle.es6'; 
-import waveaverage from '../lib/waveaverage.es6'; 
+import shuffle from '../lib/shuffle.js'; 
+import waveaverage from '../lib/waveaverage.js'; 
 
 export default class Model {
 	constructor() { 
@@ -287,7 +287,7 @@ export default class Model {
 		--this.tileCount; 
 	}
 	// 夯实数组
-	tamp() { 
+	compress() { // tamp
 		// 空列数 
 		let emptyCol = []; 
 		// 空列的最小与最大索引
