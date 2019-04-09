@@ -6,6 +6,11 @@
 // 向前兼容
 import 'babel-polyfill'; 
 
+import './lib/pixi.js'
+import './lib/gsap/TweenMax.js'
+
+import '../css/popstar.css'
+
 import Model from './core/Model.js'; 
 import View from './core/View.js'; 
 import Control from './core/Control.js'; 

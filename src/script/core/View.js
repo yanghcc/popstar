@@ -294,55 +294,55 @@ export default class view {
 			.add(
 				[{
 						name: "red",
-						url: "images/red@2x.png"
+						url: "static/images/red@2x.png"
 					},
 					{
 						name: "green",
-						url: "images/green@2x.png"
+						url: "static/images/green@2x.png"
 					},
 					{
 						name: "blue",
-						url: "images/blue@2x.png"
+						url: "static/images/blue@2x.png"
 					},
 					{
 						name: "yellow",
-						url: "images/yellow@2x.png"
+						url: "static/images/yellow@2x.png"
 					},
 					{
 						name: "purple",
-						url: "images/purple@2x.png"
+						url: "static/images/purple@2x.png"
 					},
 					{
 						name: "star_red",
-						url: "images/star_red@2x.png"
+						url: "static/images/star_red@2x.png"
 					},
 					{
 						name: "star_green",
-						url: "images/star_green@2x.png"
+						url: "static/images/star_green@2x.png"
 					},
 					{
 						name: "star_blue",
-						url: "images/star_blue@2x.png"
+						url: "static/images/star_blue@2x.png"
 					},
 					{
 						name: "star_yellow",
-						url: "images/star_yellow@2x.png"
+						url: "static/images/star_yellow@2x.png"
 					},
 					{
 						name: "star_purple",
-						url: "images/star_purple@2x.png"
+						url: "static/images/star_purple@2x.png"
 					},
 					{
 						name: "pause",
-						url: "images/pause@2x.png"
+						url: "static/images/pause@2x.png"
 					},
 					{
 						name: "play",
-						url: "images/play@2x.png"
+						url: "static/images/play@2x.png"
 					},
 					{
 						name: "cover",
-						url: "images/cover.jpg"
+						url: "static/images/cover.jpg"
 					}
 				]
 			)

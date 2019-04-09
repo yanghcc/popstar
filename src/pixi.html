@@ -7,16 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-  * {
-    padding: 0;
-    margin: 0;
-  }
+    * {
+      padding: 0;
+      margin: 0;
+    }
   </style>
 </head>
+
 <body>
   <div id="root"></div>
   <!-- <script type="text/javascript" src="script/lib/pixi.js"></script> -->
   <script src="https://pixijs.download/v5.0.0-rc.3/pixi.js"></script>
+  <script src="https://pixijs.download/v5.0.0-rc.3/pixi-legacy.js"></script>
   <script>
     var root = document.getElementById('root')
     const app = new PIXI.Application();
@@ -28,7 +30,7 @@
     // root.appendChild(app.view);
 
     // load the texture we need
-    PIXI.Loader.shared.add('bunny', 'logo.png').load((loader, resources) => {
+    PIXI.Loader.shared.add('bunny', './assets/img/logo.png').load((loader, resources) => {
       // This creates a texture from a 'bunny.png' image
       const bunny = new PIXI.Sprite(resources.bunny.texture);
 
@@ -42,6 +44,27 @@
 
       // Add the bunny to the scene we are building
       app.stage.addChild(bunny);
+      let star = new PIXI.Graphics()
+        .beginFill(0x66FF33)
+        .drawPolygon([20, 0, 26.5, 16, 40, 15, 28, 25, 32, 38, 20, 30, 8, 38, 12, 23, 12, 24, 0, 15, 15, 15]);
+      star.generateCanvasTexture();
+      app.stage.addChild(star);
+
+      let style = new PIXI.TextStyle({
+        fontFamily: "Arial",
+        fontSize: 36,
+        fill: "white",
+        stroke: '#ff3300',
+        strokeThickness: 4,
+        dropShadow: true,
+        dropShadowColor: "#000000",
+        dropShadowBlur: 4,
+        dropShadowAngle: Math.PI / 6,
+        dropShadowDistance: 6,
+      });
+      let message = new PIXI.Text("Hello Pixi!", style);
+      message.x = 150
+      app.stage.addChild(message);
 
       // Listen for frame updates
       app.ticker.add(() => {
